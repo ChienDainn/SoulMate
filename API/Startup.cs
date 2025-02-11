@@ -1,22 +1,30 @@
+using API.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 public class Startup
 {
-    public IConfiguration Configuration { get; }
 
-    public Startup(IConfiguration configuration)
+    private readonly IConfiguration _config;
+
+    public Startup(IConfiguration config)
     {
-        Configuration = configuration;
+        _config = config;
+
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddDbContext<DataContext>(options =>
+        {
+            options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+        });
         services.AddControllers();
         services.AddRazorPages();
     }
