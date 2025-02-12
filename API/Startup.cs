@@ -29,7 +29,7 @@ public class Startup
         services.AddCors(options =>
     {
         options.AddPolicy("AllowAngularApp",
-            builder => builder.WithOrigins("http://localhost:4200")
+            builder => builder.WithOrigins("https://localhost:4200")
                               .AllowAnyMethod()
                               .AllowAnyHeader());
     });
