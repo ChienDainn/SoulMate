@@ -26,6 +26,13 @@ public class Startup
             options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
         });
         services.AddControllers();
+        services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAngularApp",
+            builder => builder.WithOrigins("http://localhost:4200")
+                              .AllowAnyMethod()
+                              .AllowAnyHeader());
+    });
         services.AddRazorPages();
     }
 
@@ -35,15 +42,16 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
         }
-        else
-        {
-            app.UseExceptionHandler("/Home/Error");
-            app.UseHsts();
-        }
 
-        app.UseHttpsRedirection();
+
+
         //app.UseStaticFiles();
         app.UseRouting();
+
+        app.UseCors("AllowAngularApp");
+
+        app.UseHttpsRedirection();
+
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
