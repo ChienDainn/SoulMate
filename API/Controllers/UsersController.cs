@@ -28,7 +28,7 @@ namespace API.Controllers
 
         }
 
-[Authorize]
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUsers(int id)
         {
