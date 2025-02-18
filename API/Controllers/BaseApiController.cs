@@ -1,3 +1,4 @@
+using API.Data;
 using Microsoft.AspNetCore.Mvc;
 namespace API.Controllers
 {
