@@ -25,17 +25,25 @@ export class ErrorInterceptor implements HttpInterceptor {
                 const modalStateErrors = [];
                 for (const key in error.error.errors) {
                   if (error.error.errors[key]) {
-                    modalStateErrors.push(error.error.errors[key])
+                    modalStateErrors.push(error.error.errors[key]);
                   }
                 }
                 throw modalStateErrors.flat();
               } else {
-                this.toastr.error(error.statusText, error.status);
+                // ✅ Dùng "title" hoặc "detail" thay vì statusText
+                const errorMessage = error.error?.title || error.error?.detail || 'Bad Request';
+                this.toastr.error(errorMessage, `400 Bad Request`);
               }
               break;
+
+
+
             case 401:
-              this.toastr.error(error.statusText, error.status);
+              const errorMessage = error.error?.title || 'Unauthorized';
+              this.toastr.error(errorMessage, error.status);
               break;
+
+
             case 404:
               this.router.navigateByUrl('/not-found');
               break;

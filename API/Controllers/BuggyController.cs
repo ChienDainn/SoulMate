@@ -40,9 +40,16 @@ namespace API.Controllers
         }
 
         [HttpGet("bad-request")]
-        public ActionResult<string> GetBadRequest()
+        public IActionResult GetBadRequest()
         {
-            return BadRequest("This was not a good request");
+            var problemDetails = new ProblemDetails
+            {
+                Title = "Bad Request",
+                Status = 400,
+                Detail = "This was not a good request"
+            };
+            return BadRequest(problemDetails);
         }
+
     }
 }
