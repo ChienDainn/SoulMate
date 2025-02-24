@@ -153,3 +153,5 @@ C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\Microsoft.AspNetCore.Authen
 C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\Data\UserSeedData.json
+C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\Admin\Desktop\SoulMate\API\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
