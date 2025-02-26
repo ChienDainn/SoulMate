@@ -3,7 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://localhost:5001/api/',
+  // hubUrl: 'https://localhost:5001/hubs/',
+  // photoUrl: 'https://localhost:5001/photos/',
+  // defaultPhotoUrl: 'https://localhost:5001/photos/default/',
+  // defaultPhoto: 'https://localhost:5001/photos/default/default.jpg',
+  // defaultUserPhoto: 'https://localhost:5001/photos/default/user.jpg',
+  // defaultMemberPhoto: 'https://localhost:5001/photos/default/member.jpg',
+  // defaultAdminPhoto: 'https://localhost:5001/photos/default/admin.jpg',
+  // defaultModeratorPhoto: 'https://localhost:5001/photos/default/moderator.jpg',
+  // defaultPhotoUrl: 'https://localhost:5001/photos/default/',
+  // defaultPhoto: 'https://localhost:5001/photos/default/default.jpg',
 };
 
 /*
