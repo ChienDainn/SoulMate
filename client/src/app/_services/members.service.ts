@@ -4,25 +4,22 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Member } from '../_models/member';
 import { of, pipe } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { User } from '../_models/user';
 // import { PaginatedResult } from '../_models/pagination';
 // import { UserParams } from '../_models/userParams';
 // import { AccountService } from './account.service';
 // import { User } from '../_models/user';
 // import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
-const httpOptions = {
-    headers: new HttpHeaders({
-        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user')).token
-    })
-}
+
 @Injectable({
     providedIn: 'root'
 })
 export class MembersService {
     baseUrl = environment.apiUrl;
-    //members: Member[] = [];
-    //   memberCache = new Map();
-    //   user: User;
+    members: Member[] = [];
+    memberCache = new Map();
+    user: User;
     //   userParams: UserParams;
 
     constructor(private http: HttpClient) {
@@ -31,6 +28,7 @@ export class MembersService {
         //   this.userParams = new UserParams(user);
         //})
     }
+
 
     //   getUserParams() {
     //     return this.userParams;
@@ -46,14 +44,23 @@ export class MembersService {
     //   }
 
     getMembers() {
-        return this.http.get<Member[]>(this.baseUrl + 'users', httpOptions);
-        // var response = this.memberCache.get(Object.values(userParams).join('-'));
-        // if (response) {
-        //   return of(response);
+        if (this.members.length > 0) return of(this.members);
+        return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
+            map(members => {
+                this.members = members;
+                return members;
+            })
+        )
     }
 
-    getMember(username) {
-        return this.http.get<Member>(this.baseUrl + 'users/' + username, httpOptions);
+    getMember(username: string) {
+        const member = this.members.find(x => x.username === username);
+        if (member !== undefined) {
+            return of(member);
+        }
+        return this.http.get<Member>(this.baseUrl + 'users/' + username);
+        // const member = [...this.memberCache.values()]
+
     }
 
     //     let params = getPaginationHeaders(userParams.pageNumber, userParams.pageSize);
@@ -81,15 +88,17 @@ export class MembersService {
     //     return this.http.get<Member>(this.baseUrl + 'users/' + username);
     //   }
 
-    //   updateMember(member: Member) {
-    //     return this.http.put(this.baseUrl + 'users', member).pipe(
-    //       map(() => {
-    //         const index = this.members.indexOf(member);
-    //         this.members[index] = member;
-    //       })
-    //     )
-    //   }
+    updateMember(member: Member) {
+        return this.http.put(this.baseUrl + 'users', member).pipe(
+            map(() => {
+                const index = this.members.indexOf(member);
+                this.members[index] = member;
+            })
+        )
 
+
+    }
+    S
     //   setMainPhoto(photoId: number) {
     //     return this.http.put(this.baseUrl + 'users/set-main-photo/' + photoId, {});
     //   }
