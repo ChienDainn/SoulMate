@@ -29,10 +29,12 @@ export class ErrorInterceptor implements HttpInterceptor {
                   }
                 }
                 throw modalStateErrors.flat();
-              } else {
+              } else if (typeof (error.error) === 'object') {
                 // ✅ Dùng "title" hoặc "detail" thay vì statusText
                 const errorMessage = error.error?.title || error.error?.detail || 'Bad Request';
                 this.toastr.error(errorMessage, `400 Bad Request`);
+              } else {
+                this.toastr.error(error.error, error.status);
               }
               break;
 
