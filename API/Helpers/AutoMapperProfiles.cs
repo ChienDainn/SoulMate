@@ -40,6 +40,11 @@ namespace API.Helpers
             .ForMember(dest => dest.Photos, opt => opt.Ignore()) // Collection property
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Username)); // Correctly map Username
 
+            CreateMap<Message, MessageDto>()
+                        .ForMember(dest => dest.SenderPhotoUrl, opt => opt.MapFrom(src =>
+                            src.Sender.Photos.FirstOrDefault(x => x.IsMain).Url))
+                        .ForMember(dest => dest.RecipientPhotoUrl, opt => opt.MapFrom(src =>
+                            src.Recipient.Photos.FirstOrDefault(x => x.IsMain).Url));
 
 
         }
