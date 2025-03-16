@@ -1,11 +1,11 @@
 ![certificate](https://github.com/ChienDainn/SoulMate/blob/main/Pic/1-soulmate.png?raw=true)
-![certificate](https://user-images.githubusercontent.com/66414053/226170673-2c527b76-01fd-4049-acc0-2cc882c9e06c.jpeg)
-![certificate](https://user-images.githubusercontent.com/66414053/226170673-2c527b76-01fd-4049-acc0-2cc882c9e06c.jpeg)
-![certificate](https://user-images.githubusercontent.com/66414053/226170673-2c527b76-01fd-4049-acc0-2cc882c9e06c.jpeg)
+![certificate](https://github.com/ChienDainn/SoulMate/blob/main/Pic/2.jpg?raw=true)
+![certificate](https://github.com/ChienDainn/SoulMate/blob/main/Pic/3.jpg?raw=true)
+![certificate](https://github.com/ChienDainn/SoulMate/blob/main/Pic/4.gif?raw=true)
 
-# DatingApp Architecture Document
-The DatingApp project is a web application built using .NET Core and Angular frameworks.
-The purpose of the application is to allow users to register, create profiles, and interact with each other through messaging and photo sharing.
+# SoulMate Architecture Document
+The SoulMate project is a web application built using .NET Core and Angular frameworks.
+Designed to connect people, it enables users to register, create personalized profiles, and interact through real-time messaging and seamless photo sharing. The platform prioritizes user experience, security, and scalability, ensuring a smooth and engaging connection for its members.
 
 ## Components
 ### Server-side
