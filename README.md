@@ -1,4 +1,4 @@
-![certificate](https://user-images.githubusercontent.com/66414053/226170673-2c527b76-01fd-4049-acc0-2cc882c9e06c.jpeg)
+
 
 # DatingApp Architecture Document
 The DatingApp project is a web application built using .NET Core and Angular frameworks.
