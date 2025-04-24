@@ -4,7 +4,7 @@ Azure published - https://dappdemo.azurewebsites.net/ - Register/Login with your
 
 
 
-![DatingApp Demo](DatingApp-SPA/src/assets/DatingApp_Demo.gif)
+![DatingApp Demo](DatingApp-SPA/src/assets/gifdemo.gif)
 
 Dating Application
 Technical Stack: Angular 12 | .NET 6 WebAPI | Entity Framework Core | SQL Server | Azure
