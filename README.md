@@ -7,7 +7,7 @@
 ![DatingApp Demo](client/src/assets/gifdemo.gif)
 
 Dating Application
-Technical Stack: Angular 12 | .NET 6 WebAPI | Entity Framework Core | SQLite | 
+Technical Stack: Angular 12 | .NET 6 WebAPI | Entity Framework Core | Postgre | 
 
 Core Features & Implementation
 Authentication & Authorization
