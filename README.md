@@ -50,8 +50,6 @@ Drag-and-drop photo uploads to Cloudinary
 
 Data pagination, filtering, and sorting
 
-DevOps & Security
-
 Azure deployment with HTTPS/TLS encryption
 
 Global error handling (API + SPA)
@@ -69,4 +67,3 @@ Improved performance through lazy loading and DTO mapping
 
 Enhanced security with role-based access controls
 
-Scalable cloud architecture with Azure
