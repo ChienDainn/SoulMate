@@ -1,13 +1,13 @@
 # DatingApp
 
-Azure published - https://dappdemo.azurewebsites.net/ - Register/Login with your information and check the app flow OR you can just login with an existing user lola/password
+
 
 
 
 ![DatingApp Demo](client/src/assets/gifdemo.gif)
 
 Dating Application
-Technical Stack: Angular 12 | .NET 6 WebAPI | Entity Framework Core | SQL Server | Azure
+Technical Stack: Angular 12 | .NET 6 WebAPI | Entity Framework Core | SQLite | Azure
 
 Core Features & Implementation
 Authentication & Authorization
